@@ -2,5 +2,4 @@
 *.log
 .tmp
 node_modules
-bower_components
 src/font/config.json
