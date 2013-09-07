@@ -1,0 +1,130 @@
+<!--
+/*
+ * Author-badge
+ *
+ * Provide author info with a slick slide-down-widget.
+ *
+ * Example:
+ *
+ * <author-badge
+ *		twitter="_hannibal_smith_"
+ *		github="hannibal_smith"
+ *		stackoverflow="000000"
+ *		gplus="123456"
+ *		flickr="hannibal_smith">
+ *		<strong>Hannibal Smith</strong>
+ *		<img src="src/images/hannibal-smith.jpg" alt="Hannibal Smith">
+ *		<p>Cigar-lover, informal leader of the A-Team, interested in the US-american sub-urban idyll, car-tuning and mocking Colonel Decker.</p>
+ *	</author-badge>
+**/
+-->
+<polymer-element name="author-badge"
+	attributes="twitter github stackoverflow gplus flickr">
+
+	<template>
+
+		<link rel="stylesheet" href="styles/main.css">
+		<div class="wrap titlebar {{ active ? 'active' : '' }}" on-click="toggle" role="button">
+			<div class="image">
+				<content select="img">
+					<!-- Fallback if no image is provided -->
+					<img src="images/default.gif" alt="{{ authorName }}">
+				</content>
+			</div>
+			<div class="title">
+				<content select="strong" id="title"></content>
+			</div>
+		</div>
+		<div class="wrap content" id="content">
+			<div class="description">
+				<content select="p"></content>
+			</div>
+			<div class="buttons">
+				<template if="{{ twitter }}">
+					<a href="https://twitter.com/{{ twitter }}" class="buttons--link" title="{{ authorName }} on twitter">
+						<i class="icon-twitter-squared" aria-hidden="true"></i>
+					</a>
+				</template>
+				<template if="{{ github }}">
+					<a href="https://github.com/{{ github }}" class="buttons--link" title="{{ authorName }} on GitHub">
+						<i class="icon-github-circled" aria-hidden="true"></i>
+					</a>
+				</template>
+				<template if="{{ stackoverflow }}">
+					<a href="http://stackoverflow.com/users/{{ stackoverflow }}" class="buttons--link" title="{{ authorName }} on StackOverflow">
+						<i class="icon-stackoverflow" aria-hidden="true"></i>
+					</a>
+				</template>
+				<template if="{{ gplus }}">
+					<a href="https://plus.google.com/u/0/{{ gplus }}" class="buttons--link" title="{{ authorName }} on Goggle+">
+						<i class="icon-gplus-squared" aria-hidden="true"></i>
+					</a>
+				</template>
+				<template if="{{ flickr }}">
+					<a href="http://www.flickr.com/photos/{{ flickr }}/" class="buttons--link" title="{{ authorName }} on Flickr">
+						<i class="icon-flickr" aria-hidden="true"></i>
+					</a>
+				</template>
+			</div>
+		</div>
+
+	</template>
+
+	<script>
+		Polymer('author-badge', {
+
+			/*
+			 * Stores the name of the author.
+			 *
+			 * @attribute authorName
+			 * @type string
+			 * @default ''
+			**/
+			authorName: '',
+
+			/*
+			 * Defines the active-/inactive-toggle-state
+			 * of the widget's info panel.
+			 *
+			 * @attribute active
+			 * @type boolean
+			 * @default false
+			**/
+			active: false,
+
+			/*
+			 * Set the value of `authorName` with the content
+			 * of the <strong>-element.
+			**/
+			created: function () {
+				this.authorName = this.querySelector('strong').textContent;
+			},
+
+			/*
+			 * Toggling the `active`-value.
+			 *
+			 * Adding/removing the required classes to slide the
+			 * widget's panel up and down.
+			**/
+			toggle: function () {
+
+				this.active = !this.active;
+
+				if ( this.active ) {
+					this.$.content.classList.add('slide');
+					this.$.content.offsetHeight;
+					this.$.content.classList.add('down');
+					return;
+				}
+
+				this.$.content.classList.remove('down');
+				this.asyncMethod(function () {
+					this.$.content.classList.remove('slide');
+				}, null, 500);
+
+			}
+
+		});
+	</script>
+
+</polymer-element>

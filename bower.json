@@ -1,0 +1,24 @@
+{
+  "name": "author-badge",
+  "version": "0.0.1",
+  "authors": [
+    "Emanuel Kluge"
+  ],
+  "description": "<Author badge> web component basing on the Polymer-Framework",
+  "keywords": [
+    "polymer",
+    "webcomponents"
+  ],
+  "license": "BSD-2-Clause",
+  "homepage": "https://github.com/herschel666/author-badge",
+  "ignore": [
+    ".*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "~0.0.20130905"
+  }
+}

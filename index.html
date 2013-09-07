@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>&lt;author-badge&gt;</title>
+
+	<!-- Importing Web Component's Polyfill -->
+	<script src="bower_components/polymer/polymer.min.js"></script>
+
+	<!-- Importing Custom Elements -->
+	<link rel="import" href="src/author-badge.html">
+</head>
+<body>
+
+	<!-- Using Custom Elements -->
+	<author-badge
+		twitter="_hannibal_smith_"
+		github="hannibal_smith"
+		stackoverflow="000000"
+		gplus="123456"
+		flickr="hannibal_smith">
+		<strong>Hannibal Smith</strong>
+		<img src="src/images/hannibal-smith.jpg" alt="Hannibal Smith">
+		<p>Cigar-lover, informal leader of the A-Team, interested in the US-american sub-urban idyll, car-tuning and mocking Colonel Decker.</p>
+	</author-badge>
+
+</body>
+</html>

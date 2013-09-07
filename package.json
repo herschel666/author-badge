@@ -1,0 +1,20 @@
+{
+  "name": "author-badge",
+  "version": "0.0.1",
+  "description": "<Author badge> web component basing on the Polymer-Framework",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/herschel666/author-badge"
+  },
+  "keywords": [
+    "polymer",
+    "webcomponents"
+  ],
+  "author": "Emanuel Kluge",
+  "license": "BSD-2-Clause",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-connect": "~0.5.0",
+    "grunt-contrib-watch": "~0.5.3"
+  }
+}
