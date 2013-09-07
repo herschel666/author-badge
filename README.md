@@ -7,7 +7,7 @@
 
 ## Demo
 
-> [Check it live](http://herschel6666.github.io/author-badge).
+> [Check it live](http://herschel666.github.io/author-badge).
 
 ## Usage
 
@@ -43,7 +43,7 @@
 Attribute         | Options                   | Default             | Description
 ---               | ---                       | ---                 | ---
 `twitter`         | *string*                  |                     | The author's twitter-handle
-`github`          | *string* 	               |                     | The author's FitHub username
+`github`          | *string* 	               |                     | The author's GitHub username
 `stackoverflow`   | *int*                     |                     | The author's StackOverflow-ID
 `gplus`           | *int*                     |                     | The author's Google-Plus-ID
 `flickr`          | *string* 	               |                     | The author's Flickr username
