@@ -14,7 +14,7 @@
 1. Import Web Components' polyfill:
 
 	```html
-	<script src="//cdnjs.cloudflare.com/ajax/libs/polymer/0.0.20130816/polymer.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/polymer/0.0.20130905/polymer.min.js"></script>
 	```	
 
 2. Import Custom Element:
@@ -59,6 +59,10 @@ Attribute         | Options                   | Default             | Descriptio
 5. Submit a pull request :D
 
 ## History
+
+* v0.0.2 September 21, 2013
+	* Updated Polymer to version 0.0.20130912
+	* Put the badge's content — title, image and description — into separate helper-elements.
 
 * v0.0.1 September 7, 2013
 	* Started project using [boilerplate-element](https://github.com/customelements/boilerplate-element)

@@ -26,18 +26,21 @@
 		<link rel="stylesheet" href="styles/main.css">
 		<div class="wrap titlebar {{ active ? 'active' : '' }}" on-click="toggle" role="button">
 			<div class="image">
-				<content select="img">
-					<!-- Fallback if no image is provided -->
-					<img src="images/default.gif" alt="{{ authorName }}">
-				</content>
+				<author-image>
+					<content select="img"></content>
+				</author-image>
 			</div>
-			<div class="title">
-				<content select="strong" id="title"></content>
+			<div class="title" id="foo">
+				<author-title id="title">
+					<content select="strong"></content>
+				</author-title>
 			</div>
 		</div>
 		<div class="wrap content" id="content">
 			<div class="description">
-				<content select="p"></content>
+				<author-description>
+					<content select="p"></content>
+				</author-description>
 			</div>
 			<div class="buttons">
 				<template if="{{ twitter }}">
@@ -127,4 +130,47 @@
 		});
 	</script>
 
+</polymer-element>
+
+<!--
+ /*
+  * <author-image>
+  *
+  * Helper-element to display the author's image
+  * or a pre-defined fallback.
+ **/
+-->
+<polymer-element name="author-image" noscript>
+	<template>
+		<content select="img">
+			<!-- Fallback if no image is provided -->
+			<img src="images/default.gif" alt="{{ authorName }}">
+		</content>
+	</template>
+</polymer-element>
+
+<!--
+ /*
+  * <author-title>
+  *
+  * Helper-element to display the author's name.
+ **/
+-->
+<polymer-element name="author-title" noscript>
+	<template>
+		<content select="strong"></content>
+	</template>
+</polymer-element>
+
+<!--
+ /*
+  * <author-description>
+  *
+  * Helper-element to display the author's description.
+ **/
+-->
+<polymer-element name="author-description" noscript>
+	<template>
+		<content select="p"></content>
+	</template>
 </polymer-element>
