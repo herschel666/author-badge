@@ -7,7 +7,7 @@
   "description": "<Author badge> web component basing on the Polymer-Framework",
   "keywords": [
     "polymer",
-    "webcomponents"
+    "web-components"
   ],
   "license": "BSD-2-Clause",
   "homepage": "https://github.com/herschel666/author-badge",
